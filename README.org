@@ -1,0 +1,22 @@
+* Nate's Nix Templates
+
+A selection of nix templates and app generators to simplify working with nix as a developer.
+
+** App generator shells
+
+A minimal shell designed to be /just/ enough to initialize a new app in a given language or
+framework.
+
+#+begin_src shell
+  nix develop github:natecox/nix-templates#rust
+  cargo new my_new_app
+#+end_src
+
+** Starter templates
+
+After an app has been generated, these templates will provide a minimal development environment
+suitable for normal work.
+
+#+begin_src shell
+  nix flake init --template github:natecox/nix-templates#rust-dev
+#+end_src
