@@ -2,13 +2,38 @@
 
 A selection of nix templates and app generators to simplify working with nix as a developer.
 
+** Installation
+
+Adding these templates to your local nix flake registy can be done by either cloning the repo
+or adding the repo directly.
+
+You can name the registry whatever you want. In this document I will assume you've chosen to
+name it `natecox`.
+
+*** Local Installation
+
+You can clone this repo wherever you want, but I'll you want to install to `~/src` for
+simplicity.
+
+1. `git clone git@github.com:natecox/nix-templates.git ~/src/nix-templates`
+1. `nix registry add natecox ~/src/nix-templates`
+
+*** Adding the repo directly
+
+If you don't intend to edit these templates, and you will have internet access when you want
+to use them, it's probably easiest to just add the repo to your registry directly.
+
+```
+nix registry add natecox github:natecox/nix-templates
+```
+
 ** App generator shells
 
 A minimal shell designed to be /just/ enough to initialize a new app in a given language or
 framework.
 
 #+begin_src shell
-  nix develop github:natecox/nix-templates#rust
+  nix develop natecox#rust
   cargo new my_new_app
 #+end_src
 
@@ -18,5 +43,5 @@ After an app has been generated, these templates will provide a minimal developm
 suitable for normal work.
 
 #+begin_src shell
-  nix flake init --template github:natecox/nix-templates#rust-dev
+  nix flake init --template natecox#rust-dev
 #+end_src

@@ -15,20 +15,22 @@
         })
       ];
     in
-      flake-utils.lib.eachDefaultSystem (system:
-        let pkgs = import nixpkgs { inherit overlays system; }; in
-        {
-          devShells.default = pkgs.mkShell {
-            packages = (with pkgs; [
-              rustToolchain
-            ]) ++ pkgs.lib.optionals pkgs.stdenv.isDarwin (with pkgs; [
-              libclang
-              libiconv
-              darwin.apple_sdk.frameworks.Security
-              darwin.apple_sdk.frameworks.CoreServices
-              darwin.apple_sdk.frameworks.Carbon
-            ]);
-          };
-        }
-      );
+    flake-utils.lib.eachDefaultSystem (system:
+      let pkgs = import nixpkgs { inherit overlays system; }; in
+      {
+        devShells.default = pkgs.mkShell {
+          packages = (with pkgs; [
+            rustToolchain
+            rustup
+            rust-analyzer
+          ]) ++ pkgs.lib.optionals pkgs.stdenv.isDarwin (with pkgs; [
+            libclang
+            libiconv
+            darwin.apple_sdk.frameworks.Security
+            darwin.apple_sdk.frameworks.CoreServices
+            darwin.apple_sdk.frameworks.Carbon
+          ]);
+        };
+      }
+    );
 }
