@@ -61,10 +61,12 @@
               start-postgres &
               until pg_isready; do sleep 1; done
               createuser -s postgres
-              mix ecto.create
+              mix setup
               pg_ctl stop
               echo ".devenv" >> .gitignore
               echo ".dirnv" >> .gitignore
+              git add .
+              git commit -am "Initial commit"
             '';
           };
 
