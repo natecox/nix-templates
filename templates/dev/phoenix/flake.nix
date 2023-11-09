@@ -1,5 +1,5 @@
 {
-  description = "Description for the project";
+  description = "";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -35,7 +35,7 @@
         packages.default = pkgs.hello;
 
         devenv.shells.default = {
-          name = "devenv_test";
+          name = "";
 
           imports = [
             # This is just like the imports in devenv.nix.
