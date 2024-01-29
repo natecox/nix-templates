@@ -13,6 +13,10 @@
           path = ./templates/dev/rust;
           description = "Rust development environment template";
         };
+        roc-dev = {
+          path = ./templates/dev/roc;
+          description = "Roc development environment template";
+        };
         elixir-dev = {
           path = ./templates/dev/elixir;
           description = "Elixir development environment template";
