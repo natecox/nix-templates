@@ -77,7 +77,7 @@
               enable = true;
 
               initialScript = ''
-                create role postgres with superuser;
+                create role postgres with superuser login;
               '';
             };
           };
