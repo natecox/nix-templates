@@ -14,23 +14,27 @@
     }:
     {
       templates = {
-        elixir-dev = {
+        clojure = {
+          path = ./templates/dev/clojure;
+          description = "Clojure development environment template";
+        };
+        elixir = {
           path = ./templates/dev/elixir;
           description = "Elixir development environment template";
         };
-        haskell-dev = {
+        haskell = {
           path = ./templates/dev/haskell;
           description = "Haskell development environment template";
         };
-        phoenix-dev = {
+        phoenix = {
           path = ./templates/dev/phoenix;
           description = "From scratch pheonix framework template";
         };
-        roc-dev = {
+        roc = {
           path = ./templates/dev/roc;
           description = "Roc development environment template";
         };
-        rust-dev = {
+        rust = {
           path = ./templates/dev/rust;
           description = "Rust development environment template";
         };
