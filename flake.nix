@@ -22,6 +22,10 @@
           path = ./templates/dev/elixir;
           description = "Elixir development environment template";
         };
+        gleam = {
+          path = ./templates/dev/gleam;
+          description = "Gleam development environment template";
+        };
         haskell = {
           path = ./templates/dev/haskell;
           description = "Haskell development environment template";
