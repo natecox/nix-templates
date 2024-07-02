@@ -52,7 +52,7 @@
       in
       {
         devShells = {
-          inherit (generatorShells) rust elixir;
+          inherit (generatorShells) rust elixir gleam;
         };
       }
     );
